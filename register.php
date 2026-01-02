@@ -45,6 +45,13 @@
                 require 'db.php';
                 session_start();
 
+
+                // JIKA SUDAH LOGIN, REDIRECT KE INDEX
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit;
+}
+
                 // Pesan sukses jika ada
                 if (isset($_SESSION['register_success'])) {
                     echo '<div class="mb-6 p-4 bg-green-50 border-l-4 border-green-500 text-green-700 rounded">';

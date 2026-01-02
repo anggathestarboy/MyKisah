@@ -45,6 +45,14 @@
                 require 'db.php';
                 session_start();
 
+      
+
+// JIKA SUDAH LOGIN, REDIRECT KE INDEX
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit;
+}
+
                 if (isset($_POST['login'])) {
                     $stmt = $pdo->prepare("SELECT * FROM users WHERE username=?");
                     $stmt->execute([$_POST['username']]);

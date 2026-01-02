@@ -278,7 +278,7 @@ if (isset($_GET['unread_count'])) {
                 <div class="flex-1 flex justify-center md:justify-start">
                     <div class="flex items-center">
                         <i class="fas fa-comments text-blue-500 text-xl mr-2"></i>
-                        <h1 class="text-lg font-bold text-gray-900">My Kisah Chat</h1>
+                        <h1 class="text-lg font-bold text-gray-900">My Kisah</h1>
                     </div>
                 </div>
 
@@ -486,9 +486,7 @@ if (isset($_GET['unread_count'])) {
                 <!-- Message Input - FIXED POSITION -->
                 <div class="message-input-fixed">
                     <div class="flex items-center h-full">
-                        <button class="p-3 text-gray-600 hover:text-gray-900">
-                            <i class="fas fa-plus-circle text-xl"></i>
-                        </button>
+                       
                         <div class="flex-1 mx-2">
                             <input type="text" 
                                    id="messageInput" 
@@ -568,17 +566,7 @@ if (isset($_GET['unread_count'])) {
                 }
 
                 // Improved scroll function
-                function scrollToBottom() {
-                    const messagesContainer = document.getElementById('messagesContainer');
-                    // Use requestAnimationFrame for smooth scrolling
-                    requestAnimationFrame(() => {
-                        messagesContainer.scrollTo({
-                            top: messagesContainer.scrollHeight,
-                            behavior: 'smooth'
-                        });
-                    });
-                }
-
+                
                 // Send message
                 function sendMessage() {
                     const input = document.getElementById('messageInput');
@@ -657,8 +645,7 @@ setInterval(loadMessages, 10000);
                     </div>
                     <h3 class="text-2xl font-semibold text-gray-800 mb-2">Welcome to My Kisah Chat</h3>
                     <p class="text-gray-600 mb-6 max-w-md">
-                        Select a contact from the sidebar to start chatting. 
-                        Your conversations are end-to-end encrypted for privacy.
+                        Memulai koneksi dengan semua orang, klik tombol "Start Chat" dibawah atau gunakan sidebar di pojok kiri atas untuk memulai chat dengan sesama pengguna
                     </p>
                     
                     <!-- START CHAT Button -->
