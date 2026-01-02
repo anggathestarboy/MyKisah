@@ -13,18 +13,25 @@ $me = $_SESSION['user_id'];
 $pdo->prepare("UPDATE users SET last_seen=NOW() WHERE id=?")->execute([$me]);
 
 /* UPDATE PROFILE */
+/* UPDATE PROFILE */
 if (isset($_POST['save'])) {
 
     $bio = $_POST['bio'];
-    $avatar = null;
+    $avatarName = null;
 
     if (!empty($_FILES['avatar']['name'])) {
         $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-        $avatar = 'uploads/'.time().'.'.$ext;
-        move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar);
+        $avatarName = time().'.'.$ext;
 
+        // simpan file ke folder uploads
+        move_uploaded_file(
+            $_FILES['avatar']['tmp_name'],
+            'uploads/'.$avatarName
+        );
+
+        // SIMPAN HANYA NAMA FILE
         $pdo->prepare("UPDATE users SET bio=?, avatar=? WHERE id=?")
-            ->execute([$bio, $avatar, $me]);
+            ->execute([$bio, $avatarName, $me]);
     } else {
         $pdo->prepare("UPDATE users SET bio=? WHERE id=?")
             ->execute([$bio, $me]);
@@ -48,8 +55,9 @@ $user = $pdo->query("SELECT * FROM users WHERE id=$me")->fetch();
 
     <p>Avatar:</p>
     <?php if ($user['avatar']): ?>
-        <img src="<?= $user['avatar'] ?>" width="80"><br>
-    <?php endif; ?>
+    <img src="uploads/<?= $user['avatar'] ?>" width="80"><br>
+<?php endif; ?>
+
     <input type="file" name="avatar">
 
     <br><br>
@@ -57,4 +65,4 @@ $user = $pdo->query("SELECT * FROM users WHERE id=$me")->fetch();
 </form>
 
 <br>
-<a href="chat.php">← Kembali ke Chat</a>
+<a href="index.php">← Kembali ke Chat</a>
