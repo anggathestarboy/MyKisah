@@ -1,4 +1,4 @@
-# My Kisah 📖
+# My Kisah App
 
 **My Kisah** adalah aplikasi web berbasis **PHP Native** yang memungkinkan pengguna untuk berbagi kisah/cerita secara sederhana dengan sistem autentikasi, profil pengguna, dan fitur personalisasi seperti avatar, bio, serta *last seen*.
 
