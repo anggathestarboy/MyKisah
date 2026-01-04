@@ -39,43 +39,6 @@ Project ini dibuat sebagai latihan dan pengembangan aplikasi web menggunakan PHP
 
 ---
 
-## 📂 Struktur Folder
-
-```
-mykisah/
-├── assets/
-│   └── css, img, js
-├── uploads/
-│   └── avatar pengguna
-├── config/
-│   └── db.php
-├── auth/
-│   ├── login.php
-│   └── logout.php
-├── profile.php
-├── index.php
-└── README.md
-```
-
----
-
-## 🗄️ Struktur Database (Contoh)
-
-### Tabel `users`
-
-| Field      | Tipe Data    | Keterangan         |
-| ---------- | ------------ | ------------------ |
-| id         | INT (PK)     | ID user            |
-| name       | VARCHAR(100) | Nama user          |
-| username   | VARCHAR(100) | Username           |
-| password   | VARCHAR(255) | Password (hash)    |
-| bio        | TEXT         | Bio pengguna       |
-| avatar     | VARCHAR(255) | Nama file avatar   |
-| last_seen  | DATETIME     | Aktivitas terakhir |
-| created_at | DATETIME     | Tanggal daftar     |
-
----
-
 ## ⚙️ Cara Instalasi
 
 1. Clone repository ini
